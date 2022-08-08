@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="/CSS/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="tela-login">
+        <h1 class="center">Login Mercado</h1>
+        <input type="text" placeholder="usuario" id="usuario">
+        <br>
+        <br>
+        <input type="password" placeholder="senha" id="senha">
+        <br>
+        <br>
+        <button onclick="logar()">LOGIN</button>
+    </div>
+
+    <script>
+        function enter(e) {
+            switch (e.code) {
+                case "Enter":
+                    logar();
+                    break;
+            }
+        }
+        window.addEventListener('keypress', (e) => enter(e))
+
+        function logar() {
+            var login = document.getElementById('usuario').value;
+            var senha = document.getElementById('senha').value;
+
+            if (login == "adm" && senha == "adm") {
+                window.location.href = "home.html"
+            } else {
+                alert("LOGIN OU SENHA INVALIDO \n" + "Usuario Padrao: adm \n" + "Senha Padrao: adm");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
